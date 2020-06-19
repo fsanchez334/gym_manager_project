@@ -28,6 +28,19 @@ int determiner(char *passer){
     }
     return 1;
 }
+
+int calculateElapsedTime(int time){
+    int seconds = 0, minutes = 0;
+    while(minutes < time){
+        ++seconds;
+        sleep(1);
+        if(seconds % 60 == 0){
+	    ++minutes;
+	    printf("%d\n", minutes);
+	}	
+    }
+    return minutes;    
+}
 int main(){
     printf("%s\n", "We are going to simulate a gym");
     int tread_num = 0;
@@ -77,6 +90,10 @@ int main(){
     tester[0].holder = example;
 
     printf("%s\n", (tester[0].holder) -> first_name);
+    printf("%s\n", (tester[0].holder) -> last_name);
+    printf("%s\n", (tester[0].holder) -> given_id);
+
+    
 
 
 
