@@ -21,6 +21,19 @@ struct Person{
 };
 int main(){
     printf("%s\n", "We are going to simulate a gym");
+    
+    
+    struct Treadmill tester[3];
+    for(int i = 0; i < 4; i++){
+        tester[i].status = "Unoccupied";
+	tester[i].mode = "NULL";
+	tester[i].user_id = "Empty";
+    }
+
+    printf("%s\n", tester[1].status);
+
+
+
     return 0;
 
 }
