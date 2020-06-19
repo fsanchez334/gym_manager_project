@@ -20,15 +20,23 @@ struct Person{
     char last_name[51];
     char given_id[21];
 };
+
+int determiner(char *passer){
+    int result = strcmp("Yes", passer);
+    if (result == 0){
+        return 0;
+    }
+    return 1;
+}
 int main(){
     printf("%s\n", "We are going to simulate a gym");
-
+    int tread_num = 0;
 
     struct Treadmill tester[3];
     for(int i = 0; i < 4; i++){
+	++tread_num;
         tester[i].status = "Unoccupied";
 	tester[i].mode = "NULL";
-	tester[i].user_id = "Empty";
     }
 
     char user_first_name[51];
@@ -50,10 +58,25 @@ int main(){
 	exit(1);
     }
     strcpy(example -> first_name, user_first_name);
-    strcpy(example -> second_name, user_second_name);
+    strcpy(example -> last_name, user_second_name);
     strcpy(example -> given_id, ID_given);
     
+    printf("%s%d\n", "Number of currently available treadmills: ", tread_num);
+
+    char response[5];
+    printf("%s\n", "Would you like to use a treadmill? Yes/No");
+    scanf("%s", response);
     
+    int user_give = determiner(response);
+    if(user_give != 0){
+        printf("%s\n", "Thank you for using our program - have a good day!");
+	return 0;
+    }
+    
+    tester[0].status = "Occupied";
+    tester[0].holder = example;
+
+    printf("%s\n", (tester[0].holder) -> first_name);
 
 
 
