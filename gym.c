@@ -2,45 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "gymfunc.h"
+   
 
-struct Timer{
-    int hours;
-    int minute;
-    int second;
-};
-struct Treadmill{
-    char *status;
-    int time;
-    struct Person *holder;
-    char *mode;
-};
-
-struct Person{
-    char first_name[51];
-    char last_name[51];
-    char given_id[21];
-};
-
-int determiner(char *passer){
-    int result = strcmp("Yes", passer);
-    if (result == 0){
-        return 0;
-    }
-    return 1;
-}
-
-int calculateElapsedTime(int time){
-    int seconds = 0, minutes = 0;
-    while(minutes < time){
-        ++seconds;
-        sleep(1);
-        if(seconds % 60 == 0){
-	    ++minutes;
-	    printf("%d\n", minutes);
-	}	
-    }
-    return minutes;    
-}
 int main(){
     printf("%s\n", "We are going to simulate a gym");
     int tread_num = 0;
