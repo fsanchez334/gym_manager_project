@@ -8,6 +8,7 @@
 int main(){
     printf("%s\n", "We are going to simulate a gym");
     int tread_num = 0;
+    int number_of_mill = 0;
 
     struct Treadmill tester[3];
     for(int i = 0; i < 4; i++){
@@ -52,7 +53,10 @@ int main(){
     
     tester[0].status = "Occupied";
     tester[0].holder = example;
-
+    ++number_of_mill;
+    --tread_num; 
+ 
+    printf("%s%d%s\n", "Treadmill # ", number_of_mill, " is taken by the following individual :" 
     printf("%s\n", (tester[0].holder) -> first_name);
     printf("%s\n", (tester[0].holder) -> last_name);
     printf("%s\n", (tester[0].holder) -> given_id);
