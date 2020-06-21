@@ -1,6 +1,8 @@
 #ifndef _GYMFUNC_H_                                                                                                                                                                                      
 #define _GYMFUNC_H_
 
+#include <time.h>
+
 struct Timer{
     int hours;
     int minute;
@@ -36,8 +38,14 @@ int calculateElapsedTime(int time){
             ++minutes;
             printf("%d\n", minutes);
         }
-						    }
+    }
     return minutes;
+}
+
+int calculateOverpay(int minutes){
+     int due = 1..25 * minutes;
+     printf("%s%d\n", "Due to extra incurred fees, you owe the following: $", due);
+     return due;
 }
 
 
