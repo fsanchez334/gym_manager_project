@@ -83,8 +83,9 @@ int main(){
     printf("%s\n", "For how many extra minutes would you like to keep using the treadmill?");
     scanf("%d", &extra);
 
-    int min_continue = calculateOverpay(extra);
-    return 0; 
+    calculateOverpay(extra);
+    free(example);
+    return 0;
 
 
 

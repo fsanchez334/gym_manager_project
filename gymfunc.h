@@ -42,10 +42,9 @@ int calculateElapsedTime(int time){
     return minutes;
 }
 
-int calculateOverpay(int minutes){
-     int due = 1..25 * minutes;
-     printf("%s%d\n", "Due to extra incurred fees, you owe the following: $", due);
-     return due;
+void calculateOverpay(int minutes){
+     double due = 1.25 * minutes;
+     printf("%s%f\n", "Due to extra incurred fees, you owe the following: $", due);
 }
 
 
