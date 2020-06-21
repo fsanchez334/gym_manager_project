@@ -1,8 +1,6 @@
 #ifndef _GYMFUNC_H_                                                                                                                                                                                      
 #define _GYMFUNC_H_
 
-#include <time.h>
-
 struct Timer{
     int hours;
     int minute;
