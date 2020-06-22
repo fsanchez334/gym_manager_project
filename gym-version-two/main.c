@@ -6,11 +6,11 @@
 
 struct ID{
     char *name;
-    char *class
+    char *class;
 };
 
 struct Person{
-    struct ID *personal;
+    struct ID personal;
 };
 
 struct Treadmill{
@@ -26,12 +26,10 @@ int main(){
     int amount_people;
     scanf("%d", &amount_people);
 
-    printf("%d\n", amount_people);
-
     struct Person container[amount_people];
     struct ID box[amount_people];
 
-    int racker = 0;
+    int tracker = 1;
     
 
     for(int i = 0; i < amount_people; i++){
@@ -40,7 +38,7 @@ int main(){
 	 char sum[100];
 	 char class_00[40];
 
-	 printf("%d%s\n", tracker, "What is your first name?");
+	 printf("%d%s%s\n", tracker, " ", "What is your first name?");
 	 scanf("%s", f_name);
 
 	 printf("%s\n", "What is your last name?");
@@ -61,6 +59,24 @@ int main(){
 	 ++tracker;
 
     }
+
+    struct Treadmill available[amount_people + 1];
+
+    int left = amount_people + 1;
+
+    for(int j = 0; i < amount_people + 1; j++){
+	int choice = 0;
+        available[j].status = "Available";
+        printf("%s%d%s\n", "There are currently ",  amount_people + 1, " available. Which treadmill would you like? Enter number");
+
+	scanf("%d", &choice);
+
+
+
+
+    }
+
+
 
     printf("%s\n", "Success");
 
