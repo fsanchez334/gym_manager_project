@@ -15,9 +15,14 @@ struct Person{
 
 struct Treadmill{
     char *status;
-    struct ID *holder;
+    struct ID holder;
 };
 
+void printTreadMill(struct Treadmill personal){
+    printf("%s\n", personal.status);
+    printf("%s%s\n", "Name: ", (personal.holder).name);
+    printf("%s%s\n", "Class: ", (personal.holder).class);
+}
 int main(){
 
     printf("%s\n", "Hello, welcome to the gym! For now there are only treadmills available");
@@ -64,17 +69,25 @@ int main(){
 
     int left = amount_people + 1;
 
-    for(int j = 0; i < amount_people + 1; j++){
+    for(int j = 0; j < amount_people; j++){
 	int choice = 0;
         available[j].status = "Available";
-        printf("%s%d%s\n", "There are currently ",  amount_people + 1, " available. Which treadmill would you like? Enter number");
-
+        printf("%s%d%s\n", "There are currently ",  left, " available. Which treadmill would you like? Enter number");
 	scanf("%d", &choice);
 
-
-
-
+	--left;
+	available[choice - 1].status = "Taken";
+	struct ID desired = box[j];
+	available -> holder = desired;
     }
+    int number = 0;
+    for(int z = 0; z < amount_people + 1; z++){
+        ++number;
+	printf("%s%d\n", "Treadmill # ", number);
+        printTreadMill(available[z]);
+	
+    }
+
 
 
 
